@@ -15,7 +15,6 @@ public class Car : MonoBehaviour
     {
         if (other.CompareTag("DestroyCar"))
         {
-            Debug.Log("부딪혔나?");
             Destroy(gameObject);
         }
     }
