@@ -383,6 +383,8 @@ MonoBehaviour:
   - {fileID: 1275064448424644883, guid: f2529937671de754797f1af3ac8046b4, type: 3}
   carSpawnPositionRoot: {fileID: 937191555}
   gameOverUI: {fileID: 1356717398}
+  coinCount: 0
+  coinTxt: {fileID: 1124518459}
 --- !u!4 &229810979
 Transform:
   m_ObjectHideFlags: 0
