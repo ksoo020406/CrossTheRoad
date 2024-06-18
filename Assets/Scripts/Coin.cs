@@ -10,7 +10,7 @@ public class Coin : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GameManager.Instance.coinCount += 1;
-            Debug.Log(GameManager.Instance.coinCount);
+            //Debug.Log(GameManager.Instance.coinCount);
             Destroy(gameObject);
         }
     }
