@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.SceneManagement;
@@ -20,6 +22,9 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject gameOverUI;
 
+    public int coinCount;
+    [SerializeField] private TextMeshProUGUI coinTxt;
+
 
     private void Awake()
     {
@@ -31,6 +36,11 @@ public class GameManager : MonoBehaviour
         {
             spawnPositions.Add(carSpawnPositionRoot.GetChild(i));
         }
+    }
+
+    private void Update()
+    {
+        CoinUpUI();
     }
 
     private void Start()
@@ -72,5 +82,10 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void CoinUpUI()
+    {
+        coinTxt.text = $"{coinCount}";
     }
 }
