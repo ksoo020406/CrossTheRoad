@@ -8,10 +8,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    [Header("CreateCar")]
     float startSpawnWait;
 
-    public float spawnInterval;
+    [Header("CreateCar")]
+    private float spawnInterval;
     public List<GameObject> carPrefabs = new List<GameObject>();
 
     [SerializeField] private Transform carSpawnPositionRoot;
@@ -69,7 +69,6 @@ public class GameManager : MonoBehaviour
         gameOverUI.SetActive(true);
     }
 
-    // 버튼에 연결될 함수 -> public으로!
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
