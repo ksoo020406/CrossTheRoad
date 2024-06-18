@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
 using UnityEngine.SceneManagement;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -25,6 +24,9 @@ public class GameManager : MonoBehaviour
     public int coinCount;
     [SerializeField] private TextMeshProUGUI coinTxt;
 
+    public float timeScore;
+    [SerializeField] private TextMeshProUGUI timeScoreTxt;
+
 
     private void Awake()
     {
@@ -41,6 +43,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         CoinUpUI();
+        TimeScoreUI();
     }
 
     private void Start()
@@ -87,5 +90,12 @@ public class GameManager : MonoBehaviour
     private void CoinUpUI()
     {
         coinTxt.text = $"{coinCount}";
+    }
+
+    private void TimeScoreUI()
+    {
+        timeScore = Time.time / 5.0f;
+
+        timeScoreTxt.text = timeScore.ToString("N1");
     }
 }

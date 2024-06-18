@@ -385,6 +385,8 @@ MonoBehaviour:
   gameOverUI: {fileID: 1356717398}
   coinCount: 0
   coinTxt: {fileID: 1124518459}
+  timeScore: 0
+  timeScoreTxt: {fileID: 493488354}
 --- !u!4 &229810979
 Transform:
   m_ObjectHideFlags: 0
