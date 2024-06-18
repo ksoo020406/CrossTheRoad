@@ -187,6 +187,7 @@ MonoBehaviour:
   carPrefabs:
   - {fileID: 1275064448424644883, guid: f2529937671de754797f1af3ac8046b4, type: 3}
   carSpawnPositionRoot: {fileID: 937191555}
+  gameOverUI: {fileID: 1356717398}
 --- !u!4 &229810979
 Transform:
   m_ObjectHideFlags: 0
@@ -1612,7 +1613,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1356717399
 RectTransform:
   m_ObjectHideFlags: 0

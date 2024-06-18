@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    [Header("CreateCar")]
     float startSpawnWait;
 
     public float spawnInterval;
@@ -14,6 +16,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Transform carSpawnPositionRoot;
     private List<Transform> spawnPositions = new List<Transform>();
+
+    [Header("UI")]
+    [SerializeField] private GameObject gameOverUI;
+
 
     private void Awake()
     {
@@ -35,6 +41,7 @@ public class GameManager : MonoBehaviour
         spawnInterval = 2.0f;
     }
 
+    // -----Car-----
     // 차를 스폰
     void SpawnCarAtPosition(int posIdx)
     {
@@ -54,5 +61,17 @@ public class GameManager : MonoBehaviour
 
             yield return new WaitForSeconds(spawnInterval);
         }
+    }
+
+    // -----UI-----
+    public void GameOver()
+    {
+        gameOverUI.SetActive(true);
+    }
+
+    // 버튼에 연결될 함수 -> public으로!
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

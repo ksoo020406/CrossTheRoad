@@ -11,4 +11,14 @@ public class Player : MonoBehaviour
         CharacterManager.Instance.player = this;
         controller = GetComponent<PlayerController>();
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Car"))
+        {
+            Destroy(gameObject);
+            GameManager gameManager = GameManager.Instance;
+            gameManager.GameOver();
+        }    
+    }
 }
